@@ -8,7 +8,14 @@ const init = async () => {
         port: 3000,
         host: 'localhost'
     });
-    
+
+    server.route({
+        method: 'GET',
+        path: '/',
+        handler: (request, h) => {
+            return 'Hellow World!';
+        }
+    });
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
